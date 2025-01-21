@@ -1,11 +1,23 @@
 <?php
 
+use src\Application;
 use src\view\View;
 
 if(!function_exists('env')) {
   function env($key, $default = null)
   {
     return $_ENV[$key] ?? value($default);
+  }
+}
+if(!function_exists('app')) {
+  function app()
+  {
+    //! static to hold the same object over the files
+    static $instance = null;
+    if(! $instance) {
+      $instance = new Application;
+    }
+    return $instance;
   }
 }
 if(!function_exists('value')) 
