@@ -209,6 +209,10 @@ class ComposerStaticInitc192a4fb9223a46086142f36dab86f57
         'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+        'src\\http\\Request' => __DIR__ . '/../..' . '/src/http/Request.php',
+        'src\\http\\Response' => __DIR__ . '/../..' . '/src/http/Response.php',
+        'src\\http\\Route' => __DIR__ . '/../..' . '/src/http/Route.php',
+        'src\\view\\View' => __DIR__ . '/../..' . '/src/view/View.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

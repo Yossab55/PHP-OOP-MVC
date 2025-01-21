@@ -132,4 +132,8 @@ return array(
     'Symfony\\Polyfill\\Php80\\PhpToken' => $vendorDir . '/symfony/polyfill-php80/PhpToken.php',
     'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
     'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+    'src\\http\\Request' => $baseDir . '/src/http/Request.php',
+    'src\\http\\Response' => $baseDir . '/src/http/Response.php',
+    'src\\http\\Route' => $baseDir . '/src/http/Route.php',
+    'src\\view\\View' => $baseDir . '/src/view/View.php',
 );

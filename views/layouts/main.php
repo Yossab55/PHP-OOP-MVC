@@ -6,14 +6,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 
-    <title>mvc</title>
+    <title><?=env("APP_NAME")?></title>
 
   </head>
   <body>
+    <?= include base_path() . "views/partials/navbar.php"?>
     <div class="container">
       {{content}}
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

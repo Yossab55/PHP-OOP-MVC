@@ -1,5 +1,7 @@
 <?php
 
+use src\view\View;
+
 if(!function_exists('env')) {
   function env($key, $default = null)
   {
@@ -18,7 +20,20 @@ if(!function_exists('base_path')) {
   {
     //* dirname return to base folder
     // __DIR__ return where you are now
-    return dirname(__DIR__);
+    return dirname(__DIR__ ) . "/../";
+  }
+}
+if(!function_exists('view_path')) {
+  function view_path()
+  {
+    //* dirname return to base folder
+    // __DIR__ return where you are now
+    return base_path() . 'views/';
+  }
+}
+if(! function_exists('view')) {
+  function view($view, $args = []) {
+    return View::make($view, $args);
   }
 }
 

@@ -1,6 +1,6 @@
 <?php
+
+use app\controllers\HomeController;
 use src\http\Route;
 
-Route::get('/', function () {
-  return "hello";
-});
+Route::get('/', [HomeController::class, "index"]);
