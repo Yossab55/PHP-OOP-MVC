@@ -40,9 +40,9 @@ class ArrayWrapper
     if(! str_contains($key, ".")) {
       return $array[$key] ?? value($default);
     }
-
+    
     foreach(explode(".", $key) as $part) {
-      if(static::exists($array, $part) && static::accessible($array[$part])) {
+      if(static::exists($array, $part) && static::accessible($array)) {
         $array = $array[$part];
       } else {
         return value($default);
