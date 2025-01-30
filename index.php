@@ -13,11 +13,13 @@ app()->run();
 $validator = new Validator();
 
 $validator->setRules([
-  'username' => ['required', 'between:5, 10'
-]]);
+  'password' => 'required|confirmed',
+  'password_confirmation' => 'required'
+]);
 
 $validator->make([
-  'username' => 'yossabbbbbbbbb',
+  'password' => 'abc',
+  'password_confirmation' => 'abc'
 ]);
 
 echo '<pre>';
