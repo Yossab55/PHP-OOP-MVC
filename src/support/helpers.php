@@ -1,5 +1,6 @@
 <?php
 
+use http\support\Hash;
 use src\Application;
 use src\view\View;
 
@@ -18,6 +19,20 @@ if(!function_exists('app')) {
       $instance = new Application;
     }
     return $instance;
+  }
+}
+if(!function_exists('bcrypt')) {
+  function bcrypt($password)
+  {
+    return Hash::password($password);
+  }
+}
+if(!function_exists('class_base_name')) {
+  function class_base_name($class) 
+  {
+    $class = is_object($class) ? get_class($class) : $class;
+
+    return basename(str_replace('\\', '/', $class));
   }
 }
 if(!function_exists('value')) 
