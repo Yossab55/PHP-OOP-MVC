@@ -2,7 +2,7 @@
 
 namespace src;
 use src\http\{Route, Response, Request};
-use src\support\Config;
+use src\support\{Config, Session};
 use src\database\DB;
 use src\database\managers\MySQLManager;
 
@@ -12,6 +12,7 @@ class Application
   protected $response;
   protected $request;
   public $config;
+  protected $session;
   protected $db;
 
   public function __construct()
@@ -20,6 +21,7 @@ class Application
     $this->request = new Request();
     $this->route = new Route($this->response, $this->request);
     $this->config = new Config($this->loadConfiguration());
+    $this->session = new Session();
     $this->db = new DB($this->getDatabaseManager());
   }
   protected function getDatabaseManager()

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 use app\models\User;
 use src\database\managers\MySQLManager;
@@ -8,5 +9,3 @@ require_once base_path() . "vendor/autoload.php";
 require_once base_path() . "routes/web.php";
 
 app()->run();
-
-var_dump(implode('=?, ', ['password', 'username']) . '=?');
