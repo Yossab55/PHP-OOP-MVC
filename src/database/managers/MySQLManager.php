@@ -27,10 +27,12 @@ class MySQLManager implements DatabaseManager
   public function query(string $query, $values = []) 
   {
     $statement = self::$instance->prepare($query);
-
+    var_dump($statement);
     for($i = 1; $i <= count($values); $i++) {
       $statement->bindValue($i, $values[$i - 1]);
     }
+    // var_dump($values);
+    // var_dump($statement);
     $statement->execute();
 
     return $statement->fetchAll(\PDO::FETCH_ASSOC);

@@ -42,7 +42,10 @@ class Session
       'content' => $message
     ];
   }
-
+  public function hasFlash($key)
+  {
+    return isset($_SESSION['flash_messages'][$key]);
+  }
   public function getFlash($key)
   {
     return $_SESSION['flash_messages'][$key]['content'] ?? false;

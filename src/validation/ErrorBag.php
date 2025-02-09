@@ -4,6 +4,7 @@ namespace src\validation;
 class ErrorBag
 {
   protected array $errors = [];
+  
   public function add($key, $message) 
   {
     $this->errors[$key][] = $message;

@@ -10,7 +10,7 @@
 
   </head>
   <body>
-    <?= include base_path() . "views/partials/navbar.php"?>
+    <?php include base_path() . "views/partials/navbar.php"?>
     <div class="container">
       {{content}}
     </div>

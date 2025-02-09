@@ -2,6 +2,8 @@
 
 use http\support\Hash;
 use src\Application;
+use src\http\Request;
+use src\http\Response;
 use src\view\View;
 
 if(!function_exists('env')) {
@@ -81,3 +83,30 @@ if(! function_exists('view')) {
   }
 }
 
+if(! function_exists('old')) {
+  function old($key)
+  {
+    if(app()->session->hasFlash($key)) {
+      return app()->session->getFlash($key);
+    }
+  }
+}
+if(! function_exists('request')) {
+  function request($key = null)
+  {
+    $instance = new Request;
+    if($key) {
+      return $instance->get($key);
+    }
+    if(is_array($key)) {
+      return $instance->only($key);
+    }
+    return $instance;
+  }
+}
+if(! function_exists('back')) {
+  function back()
+  {
+    return (new Response)->back();
+  }
+}

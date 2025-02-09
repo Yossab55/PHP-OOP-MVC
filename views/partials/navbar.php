@@ -9,7 +9,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="/projects/project_006">
         Home
       </a>
 
@@ -43,10 +43,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" href="/signup">
+          <a class="button is-primary" href="signup">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light" href="/login">
+          <a class="button is-light" href="login">
             Log in
           </a>
         </div>

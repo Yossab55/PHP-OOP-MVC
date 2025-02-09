@@ -1,7 +1,7 @@
 <?php
 
 namespace src\validation;
-use src\validation\rules\{AlphaNumerical, BetweenRule, ConfirmedRule, EmailRule, MaxRule, RequireRule};
+use src\validation\rules\{AlphaNumerical, BetweenRule, ConfirmedRule, EmailRule, MaxRule, RequireRule, UniqueRule};
 
 trait RuleMap 
 {
@@ -11,7 +11,8 @@ trait RuleMap
     'max' => MaxRule::class,
     'between' => BetweenRule::class,
     'email' => EmailRule::class,
-    'confirmed' => ConfirmedRule::class
+    'confirmed' => ConfirmedRule::class,
+    'unique' => UniqueRule::class,
   ];
   public static function resolve(string $rule, $options) {
     return  new static::$rules_map[$rule](...$options);

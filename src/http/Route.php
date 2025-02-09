@@ -8,7 +8,7 @@ class Route
   public Request $request;
   // route place to get code 
   // action what to do in this place
-  protected static array $route_map = [];
+  public static array $route_map = [];
   public function __construct(Response $response, Request $request)
   {
     $this->response = $response;
@@ -20,19 +20,19 @@ class Route
     $path = $this->request->path();
     $method = $this->request->method();
     $action = self::$route_map[$method][$path] ?? false;
-
     if(!array_key_exists($path, self::$route_map[$method])) {
+      $this->response->setStatuesCode(404);
       return View::make_error(404);
     }
     if(!$action) {
       return;
     } 
-
+    
     if(is_callable($action)) {
-      call_user_func_array($action, []/**array pass arguments */);
-    } 
-    if(is_array($action)) {
-      // [name of class, action];
+    call_user_func_array($action, []/**array pass arguments */);
+  } 
+  if(is_array($action)) {
+    // [name of class, action];
       $controller = new $action[0]; // why need new key word because call_user_func_array 
       $method = $action[1];
       //* call the function as a static member not instance member in the class
