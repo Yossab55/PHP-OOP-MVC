@@ -1,38 +1,44 @@
-# 🚀 MVC Project – *Project Name*  
+# 🚀 MVC Project 
 
-![MVC Architecture](https://upload.wikimedia.org/wikipedia/commons/a/a0/MVC-Process.svg)  
+![PHP](https://img.shields.io/badge/PHP-8.x-blue?logo=php)  
+![Composer](https://img.shields.io/badge/Composer-Dependency%20Manager-orange?logo=composer)  
 
 ## 📌 Overview  
-This project follows the **Model-View-Controller (MVC)** architecture to ensure a clean separation of concerns, making the application scalable and maintainable.  
+This project is built using **PHP** following the **Model-View-Controller (MVC)** architecture. It includes autoloading with **Composer** and environment configuration management using **vlucas/phpdotenv** for security and flexibility.  
 
 ## 🎯 Features  
-✅ Structured MVC Pattern  
-✅ CRUD Operations  
-✅ Database Integration  
-✅ Authentication & Authorization (if applicable)  
-✅ Responsive UI  
+✅ Follows MVC architecture  
+✅ Uses Composer for dependency management  
+✅ Implements autoloading with `autoload.php`  
+✅ Secure environment variables with **vlucas/phpdotenv**  
+✅ Supports database integration (MySQL/PostgreSQL)  
+✅ Clean and maintainable code  
 
 ## 🛠️ Technologies Used  
-- **Backend:** *Express.js / Django / Laravel / etc.*  
-- **Frontend:** *React / Vue / EJS / etc.*  
-- **Database:** *MySQL / MongoDB / PostgreSQL / etc.*  
-- **Others:** *Node.js, Bootstrap, etc.*  
+- **Language:** PHP 8.x  
+- **Framework/Libraries:** None (Custom MVC structure)  
+- **Dependencies:**  
+  - [`vlucas/phpdotenv`](https://github.com/vlucas/phpdotenv) – Secure environment variable handling  
+  - [`Composer`](https://getcomposer.org/) – Dependency management  
+- **Database:** MySQL 
+- **Other:** HTML 
 
 ## ⚙️ Installation & Setup  
-Follow these steps to run the project locally:  
+Follow these steps to set up the project locally:  
 
 ```bash
-# Clone the repository
 git clone https://github.com/yourusername/project-name.git
-
-# Navigate to project directory
 cd project-name
 
-# Install dependencies
-npm install  # or pip install -r requirements.txt (if Python)
+composer install
 
-# Run the project
-npm start  # or python manage.py runserver
+cp .env.example .env
+DB_HOST=localhost
+DB_NAME=my_database
+DB_USER=root
+DB_PASS=secret
+
+php -S localhost:8000 -t public
 ```
 ## 📞 Contact  
 For any questions or suggestions:  
