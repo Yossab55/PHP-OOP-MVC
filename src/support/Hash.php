@@ -1,6 +1,6 @@
 <?php
 
-namespace http\support;
+namespace src\support;
 
 class Hash 
 {

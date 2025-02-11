@@ -12,7 +12,7 @@ class Session
       $flash_card['remove'] = true;
 
     }
-    $_SERVER['flash_messages'] = $flash_cards;
+    $_SESSION['flash_messages'] = $flash_cards;
   }
   public function set($key, $value)
   {
@@ -46,6 +46,14 @@ class Session
   {
     return isset($_SESSION['flash_messages'][$key]);
   }
+  public function hasOldFlash($key)
+  {
+    return isset($_SESSION['flash_messages']['old']['content'][$key]);
+  }
+  public function hasErrorFlash($key)
+  {
+    return isset($_SESSION['flash_messages']['errors']['content'][$key]);
+  }
   public function getFlash($key)
   {
     return $_SESSION['flash_messages'][$key]['content'] ?? false;
@@ -64,6 +72,6 @@ class Session
         unset($flash_cards[$key]);
       }
     }
-    $_SERVER['flash_messages'] = $flash_cards;
+    $_SESSION['flash_messages'] = $flash_cards;
   }
 }

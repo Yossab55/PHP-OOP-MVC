@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-use app\controllers\RegisterController;
+use app\models\User;
 use Dotenv\Dotenv;
-use src\http\Request;
 
 require_once "src/support/helpers.php";
 require_once base_path() . "vendor/autoload.php";
@@ -14,5 +13,3 @@ $dotenvFile = Dotenv::createImmutable(base_path());
 $dotenvFile->load();
 
 app()->run();
-var_dump( app()->db->row("SELECT DATABASE()"));
-

@@ -17,8 +17,8 @@ class MySQLManager implements DatabaseManager
       self::$instance = new \PDO(
         env('DB_DRIVER')
         . ':host=' . env('DB_HOST') 
-        . ';dbname=' . env('DB_DATABASE'
-        . ';'),
+        . ';dbname=' . env('DB_DATABASE')
+        . ';',
         env('DB_USERNAME'), env('DB_PASSWORD'));
     }
     return self::$instance;
@@ -27,12 +27,9 @@ class MySQLManager implements DatabaseManager
   public function query(string $query, $values = []) 
   {
     $statement = self::$instance->prepare($query);
-    var_dump($statement);
     for($i = 1; $i <= count($values); $i++) {
       $statement->bindValue($i, $values[$i - 1]);
     }
-    // var_dump($values);
-    // var_dump($statement);
     $statement->execute();
 
     return $statement->fetchAll(\PDO::FETCH_ASSOC);

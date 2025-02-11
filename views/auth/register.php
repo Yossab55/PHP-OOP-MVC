@@ -9,7 +9,7 @@
     <div class="control">
         <input class="input" type="text" name="name" value="<?= old('name'); ?>">
     </div>
-    <?php if (app()->session->hasFlash('errors')): ?>
+    <?php if ((app()->session->hasErrorFlash('name'))): ?>
     <p class="has-text-danger">
         <?= app()->session->getFlash('errors')['name'][0]; ?>
     </p>
@@ -21,7 +21,7 @@
     <div class="control">
         <input class="input" type="text" name="username" value="<?= old('username'); ?>">
     </div>
-    <?php if (app()->session->hasFlash('errors')): ?>
+    <?php if (app()->session->hasErrorFlash('username')): ?>
     <p class="has-text-danger">
         <?= app()->session->getFlash('errors')['username'][0]; ?>
     </p>
@@ -33,7 +33,7 @@
     <div class="control">
         <input class="input" type="email" name="email" value="<?= old('email'); ?>">
     </div>
-    <?php if (app()->session->hasFlash('errors')): ?>
+    <?php if (app()->session->hasErrorFlash('email')): ?>
     <p class="has-text-danger">
         <?= app()->session->getFlash('errors')['email'][0]; ?>
     </p>
@@ -45,7 +45,7 @@
     <div class="control">
         <input class="input" type="password" name="password">
     </div>
-    <?php if (app()->session->hasFlash('errors')): ?>
+    <?php if (app()->session->hasErrorFlash('password')): ?>
     <p class="has-text-danger">
         <?= app()->session->getFlash('errors')['password'][0]; ?>
     </p>
@@ -57,7 +57,7 @@
     <div class="control">
         <input class="input" type="password" name="password_confirmation">
     </div>
-    <?php if (app()->session->hasFlash('errors')): ?>
+    <?php if (app()->session->hasErrorFlash('password_confirmation')): ?>
     <p class="has-text-danger">
         <?= app()->session->getFlash('errors')['password_confirmation'][0]; ?>
     </p>

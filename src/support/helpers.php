@@ -1,6 +1,6 @@
 <?php
 
-use http\support\Hash;
+use src\support\Hash;
 use src\Application;
 use src\http\Request;
 use src\http\Response;
@@ -86,8 +86,8 @@ if(! function_exists('view')) {
 if(! function_exists('old')) {
   function old($key)
   {
-    if(app()->session->hasFlash($key)) {
-      return app()->session->getFlash($key);
+    if((app()->session->hasOldFlash($key))) {
+      return app()->session->getFlash('old')[$key];
     }
   }
 }

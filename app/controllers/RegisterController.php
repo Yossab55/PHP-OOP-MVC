@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\User;
 use src\validation\Validator;
-
+use src\support\Hash;
 class RegisterController
 {
   public function index() 
@@ -30,7 +30,6 @@ class RegisterController
     if(! $v->passes()) {
       app()->session->setFlash('errors', $v->errors());
       app()->session->setFlash('old', request()->all());
-
       return back();
     }
 
@@ -38,7 +37,7 @@ class RegisterController
       'username' => request('username'),
       'name' => request('name'),
       'email' => request('email'),
-      'password' => request('password'),
+      'password' => bcrypt(request('password')),
     ]);
 
     app()->session->setFlash('success', 'Register Succeeded');
